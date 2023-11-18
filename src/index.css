@@ -1,10 +1,84 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  body {
+    @apply font-poppins;
+  }
+  .container {
+    @apply mx-auto px-5;
+    @media (max-width: 1199px) {
+      max-width: 100%;
+    }
+  }
 
-@layer utilities{}
+  .link {
+    @apply font-medium capitalize hover:text-cyan duration-700 transition-all text-white/50;
+  }
+  .btn {
+    @apply inline-block font-medium  rounded-[20px] capitalize tracking-wide px-6 py-2 border transition-all duration-700;
+    &-primary {
+      @apply bg-cyan text-white border-transparent hover:border-white hover:text-white hover:bg-transparent;
+    }
+    &-secondary {
+      @apply bg-transparent border-white text-white hover:bg-cyan hover:border-cyan;
+    }
+  }
+}
 
-@layer components{}
+@layer components {
+  /* Header Component Classes Starts */
+  header {
+    @apply bg-black md:py-8 py-5;
+    .brandLogo {
+      @apply md:w-2/12 w-4/12 md:ml-0 mr-auto;
+    }
+    nav {
+      @apply md:w-8/12 w-full;
+      @media (max-width: 767px) {
+        position: absolute;
+        top: 82px;
+        left: 0;
+        background: #151515;
+        right: 0;
+        flex-direction: column;
+        padding: 20px;
+        transition: 0.5s ease all;
+        opacity: 0;
+        visibility: hidden;
+        z-index: 99;
+        &.active {
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+      ul {
+        @apply flex justify-center lg:space-x-10 md:space-x-5 md:flex-row flex-col md:space-y-0 space-y-3;
+      }
+    }
+    .hamburger {
+      @apply flex flex-col items-center  justify-center p-2 ml-3;
+      &.active {
+        div {
+          transition: 0.5s ease all;
+          position: relative;
+          &:first-child {
+            transform: rotate(-45deg);
+            top: 10px;
+          }
+          &:nth-child(2) {
+            opacity: 0;
+          }
+          &:last-child {
+            transform: rotate(45deg);
+            top: -6px;
+          }
+        }
+      }
+    }
+  }
+  /* Header Component Classes Ends */
+}

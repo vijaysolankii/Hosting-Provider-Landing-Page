@@ -1,5 +1,5 @@
->> Everything will be block wise (component )
-    >> each items class used properly in between component and utilities
+>> Everything will be block wise (component)
+    >> each items classes will going to use properly in component and utilities
 
 >> when you start finish in following
     >> first complete desktop then mobile
@@ -7,9 +7,12 @@
 
 >> Add ons
     >> Add new sliding effect use GSAP
-    >> add the animated loader
     >> Add custom scroll
+    >> add the animated loader
 
 >> Backend 
     >> start mail services
     >> upload to netlify 
+
+==================================================================================
+Total :                                                       24/28Hrs (This week)  

@@ -1,8 +1,8 @@
+import Home from "./pages/Home";
+
 function App() {
   return (
-    <h1 className="text-2xl bg-indigo-500 text-center font-bold underline">
-      Hello world!
-    </h1>
+    <Home />
   )
 }
 
