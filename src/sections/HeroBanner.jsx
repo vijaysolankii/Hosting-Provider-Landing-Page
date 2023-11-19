@@ -1,21 +1,23 @@
 import React from 'react'
 import Button from '../components/Button'
+import BannerImg from '../assets/images/bannerImg.svg'
 
 const HeroBanner = () => {
   return (
     <section className='banner'>
         <div className="container">
-            <div className="row">
-                <div className="banner-content w-6/12">
-                    <h1>The best and <strong>chepest</strong> hosting for your website</h1>
+            <div className="banner-wrap">
+                <div className="banner-content">
+                    <h1>The best and <i>chepest</i> hosting for your website</h1>
                     <p>Hosting your website here is easy. access it fast, server security is very well maintained. and of course supported by reliable servers.</p>
                     <div className="btnWrap">
-                        <Button text="login" />
+                        <Button text="Get Started" classes="btn-primary" />
+                        <Button text="Try Start free" classes="btn-secondary" />
                     </div>
                 </div>
-                <div className="banner-img w-6/12">
+                <div className="banner-img">
                     <figure>
-                        <img src="" alt="" />
+                        <img src={BannerImg} alt="BannerImg" />
                     </figure>
                 </div>
             </div>

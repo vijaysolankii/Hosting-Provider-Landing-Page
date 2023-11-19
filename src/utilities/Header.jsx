@@ -28,7 +28,7 @@ const Header = () => {
           </ul>
         </nav>
         <div className="md:w-2/12 w-3/12 text-right">
-          <Button text="login" />
+          <Button classes={'btn-primary sm-space'} text="login" />
         </div>
         <div className="block md:hidden">
           <div

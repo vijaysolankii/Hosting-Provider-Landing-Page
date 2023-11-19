@@ -1,10 +1,16 @@
-import React from 'react'
-import Header from '../utilities/Header'
+import React from "react";
+import Header from "../utilities/Header";
+import HeroBanner from "../sections/HeroBanner";
+import HeroSlider from "../sections/HeroSlider";
 
 const Home = () => {
   return (
-    <Header />
-  )
-}
+    <>
+      <Header />
+      <HeroBanner />
+      <HeroSlider />
+    </>
+  );
+};
 
-export default Home
+export default Home;
