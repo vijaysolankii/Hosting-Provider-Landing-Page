@@ -2,6 +2,7 @@ import React from "react";
 import Header from "../utilities/Header";
 import HeroBanner from "../sections/HeroBanner";
 import HeroSlider from "../sections/HeroSlider";
+import Services from "../sections/Services";
 
 const Home = () => {
   return (
@@ -9,6 +10,7 @@ const Home = () => {
       <Header />
       <HeroBanner />
       <HeroSlider />
+      <Services />
     </>
   );
 };

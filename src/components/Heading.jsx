@@ -1,9 +1,10 @@
 import React from 'react'
 
-const Heading = ({headContent,paragraphContent,boldContent}) => {
+const Heading = ({headContent,paragraphContent}) => {
   return (
     <div className="heading">
-        <h1></h1>
+        {headContent && <h2>{headContent}</h2>}
+        {paragraphContent && <p>{paragraphContent}</p>}
     </div>
   )
 }
