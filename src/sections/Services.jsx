@@ -17,7 +17,7 @@ const Services = () => {
         <div className="flex gap-x-5">
           <div className="services-card lg:w-[33.33%] md:w-[50%] w-full">
             <i>
-              <img src={"ServiceHeart"} alt="serviceHeart" />
+              <img src={ServiceHeart} alt="serviceHeart" />
             </i>
             <div className="services-card__content">
               <h3 className="text-3xl"></h3>
