@@ -2,9 +2,9 @@ import React from "react";
 import Heading from "../components/Heading";
 
 
-import {ServiceHeart} from "../assets/images/ServiceHeart.svg";
-// import {ServiceSignal} from "../assets/images/ServiceSignal.svg";
-// import {ServiceFast} from "../assets/images/ServiceFast.svg";
+import ServiceHeart from "../assets/images/ServiceHeart.svg";
+import ServiceSignal from "../assets/images/ServiceSignal.svg";
+import ServiceFast from "../assets/images/ServicesFast.svg";
 
 const Services = () => {
     const headingText = 'The best service especially for you'
@@ -16,8 +16,17 @@ const Services = () => {
         <Heading headContent={headingText} paragraphContent={paragraphText} />
         <div className="flex gap-x-5">
           <div className="services-card lg:w-[33.33%] md:w-[50%] w-full">
+            <figure>
+              <img src={ServiceHeart} alt="ServiceHeart" />
+            </figure>
+            <div className="services-card__content">
+              <h3 className="text-3xl"></h3>
+              <p></p>
+            </div>
+          </div>
+          <div className="services-card lg:w-[33.33%] md:w-[50%] w-full">
             <i>
-              <img src={ServiceHeart} alt="serviceHeart" />
+            <img src={ServiceSignal} alt="ServiceHeart" />
             </i>
             <div className="services-card__content">
               <h3 className="text-3xl"></h3>
@@ -26,16 +35,7 @@ const Services = () => {
           </div>
           <div className="services-card lg:w-[33.33%] md:w-[50%] w-full">
             <i>
-              {/* <img src={ServiceSignal} alt="serviceSignal" /> */}
-            </i>
-            <div className="services-card__content">
-              <h3 className="text-3xl"></h3>
-              <p></p>
-            </div>
-          </div>
-          <div className="services-card lg:w-[33.33%] md:w-[50%] w-full">
-            <i>
-              {/* <img src={ServiceFast} alt="serviceFast" /> */}
+              <img src={ServiceFast} alt="serviceFast" />
             </i>
             <div className="services-card__content">
               <h3 className="text-3xl"></h3>
