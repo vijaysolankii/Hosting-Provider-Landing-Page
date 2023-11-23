@@ -22,6 +22,15 @@
     }
   }
 
+  .heading {
+    h2 {
+      @apply xl:text-6xl md:text-5xl text-3xl font-semibold;
+    }
+    p {
+      @apply xl:text-2xl md:text-xl text-black/70 xl:w-[550px] md:w-[450px] mx-auto;
+    }
+  }
+
   .link {
     @apply font-medium capitalize hover:text-cyan duration-700 transition-all text-white/50;
   }
@@ -84,7 +93,7 @@
   /* Banner Component Classes Starts */
   .banner {
     height: calc(100vh - 242px);
-    @media (max-width:1199px) or (max-height: 780px) {
+    @media (max-width: 1199px) or (max-height: 780px) {
       height: auto;
     }
     @apply py-[80px];
@@ -135,4 +144,46 @@
     }
   }
   /* Marquee Component Classes Ends */
+
+  /* Services Component Classes Starts */
+  .services {
+    @apply bg-white xl:py-[150px];
+    .heading {
+      h2 {
+        @apply text-black xl:mb-12 md:mb-8 mb-6;
+      }
+    }
+    .servicesCardWrapper {
+      @apply flex lg:flex-row flex-col xl:gap-x-14 gap-8  xl:mt-[150px] md:mt-[80px] mt-[50px];
+    }
+    &-card {
+      &:hover{
+        @apply bg-black border-black cursor-pointer xl:-translate-y-[80px] md:-translate-y-[0px];
+        box-shadow: 0px 10px 30px 0 #0000007a;
+        .services-card__content{
+          h3{
+            @apply text-white;
+          }
+          p{
+            @apply text-white/50;
+          }
+
+        }
+      }
+      @apply xl:px-6 px-4 xl:py-12 py-8 rounded-xl border-2 border-[#ddd] lg:w-[33.33%] md:w-[100%] w-full text-center duration-300  transition-all;
+      i {
+        @apply text-center inline-block mb-8;
+      }
+
+      &__content {
+        h3 {
+          @apply font-semibold xl:mb-5 md:mb-3 xl:text-3xl md:text-2xl duration-300  transition-colors;
+        }
+        p {
+          @apply xl:text-xl md:text-sm text-black/50 duration-300  transition-colors;
+        }
+      }
+    }
+  }
+  /* Services Component Classes Ends */
 }

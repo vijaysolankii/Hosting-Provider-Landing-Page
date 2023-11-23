@@ -1,47 +1,54 @@
 import React from "react";
 import Heading from "../components/Heading";
 
-
 import ServiceHeart from "../assets/images/ServiceHeart.svg";
 import ServiceSignal from "../assets/images/ServiceSignal.svg";
 import ServiceFast from "../assets/images/ServicesFast.svg";
 
-const Services = () => {
-    const headingText = 'The best service especially for you'
-    const paragraphText = 'We will serve you beset we can with aim of providing satisfection to you.'
+const data = [
+  {
+    img: ServiceHeart,
+    heading: "Faster hosting process",
+    paragraph:
+      "We can speed the creation of your webiste. which is made directly by the experts",
+  },
+  {
+    img: ServiceSignal,
+    heading: "Speed to access faster",
+    paragraph:
+      "Excellent network infrastructure and hardware to support fast and stable access.",
+  },
+  {
+    img: ServiceFast,
+    heading: "faster service 24/7",
+    paragraph:
+      "We have a response time of less than 150 seconds, available 24 hours a day.",
+  },
+];
 
-    return (
+const Services = () => {
+  const headingText = "The best service especially for you";
+  const paragraphText =
+    "We will serve you beset we can with aim of providing satisfection to you.";
+
+  return (
     <section className="services">
       <div className="container">
-        <Heading headContent={headingText} paragraphContent={paragraphText} />
-        <div className="flex gap-x-5">
-          <div className="services-card lg:w-[33.33%] md:w-[50%] w-full">
-            <figure>
-              <img src={ServiceHeart} alt="ServiceHeart" />
-            </figure>
-            <div className="services-card__content">
-              <h3 className="text-3xl"></h3>
-              <p></p>
+        <div className="text-center">
+          <Heading headContent={headingText} paragraphContent={paragraphText} />
+        </div>
+        <div className="servicesCardWrapper">
+          {data.map((item, index) => (
+            <div key={index} className="services-card">
+              <i>
+                <img src={item.img} alt={"services-icons"} />
+              </i>
+              <div className="services-card__content">
+                <h3>{item.heading}</h3>
+                <p>{item.paragraph}</p>
+              </div>
             </div>
-          </div>
-          <div className="services-card lg:w-[33.33%] md:w-[50%] w-full">
-            <i>
-            <img src={ServiceSignal} alt="ServiceHeart" />
-            </i>
-            <div className="services-card__content">
-              <h3 className="text-3xl"></h3>
-              <p></p>
-            </div>
-          </div>
-          <div className="services-card lg:w-[33.33%] md:w-[50%] w-full">
-            <i>
-              <img src={ServiceFast} alt="serviceFast" />
-            </i>
-            <div className="services-card__content">
-              <h3 className="text-3xl"></h3>
-              <p></p>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>
