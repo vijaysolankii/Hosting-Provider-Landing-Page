@@ -157,17 +157,16 @@
       @apply flex lg:flex-row flex-col xl:gap-x-14 gap-8  xl:mt-[150px] md:mt-[80px] mt-[50px];
     }
     &-card {
-      &:hover{
+      &:hover {
         @apply bg-black border-black cursor-pointer xl:-translate-y-[80px] md:-translate-y-[0px];
         box-shadow: 0px 10px 30px 0 #0000007a;
-        .services-card__content{
-          h3{
+        .services-card__content {
+          h3 {
             @apply text-white;
           }
-          p{
+          p {
             @apply text-white/50;
           }
-
         }
       }
       @apply xl:px-6 px-4 xl:py-12 py-8 rounded-xl border-2 border-[#ddd] lg:w-[33.33%] md:w-[100%] w-full text-center duration-300  transition-all;
@@ -186,4 +185,19 @@
     }
   }
   /* Services Component Classes Ends */
+
+  /* Support Component Classes Ends */
+  .support {
+    .tab {
+      padding: 10px;
+      background-color: white;
+      border: 0px;
+      border-radius: 3px 3px 0 0;
+    }
+
+    .selected {
+      background-color: lightgray;
+    }
+  }
+  /* Support Component Classes Ends */
 }
