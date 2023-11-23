@@ -7,9 +7,18 @@ const Support = () => {
   const headingTxt =
     "We are ready to support your buisness need to be more advance";
 
-  const itemOneArray = [ "Number of Website","Number of Email Account","Unlimited MySql Databases","Unlimited Bandwidth","unlimited Sub & Parked Domains","30 Days Unconditional Furentee","Free Domain","Disk space",];
 
-  const itemOneArrayItration = itemOneArray.map((item,index) => <li key={index}>{item}</li>)
+  const data = [
+    {item : [ "Number of Website1","Number of Email Account1","Unlimited MySql Databases1","Unlimited Bandwidth1","unlimited Sub & Parked Domains1","30 Days Unconditional Furentee1","Free Domain1","Disk space1",]},
+    {item : [ "Number of Website2","Number of Email Account2","Unlimited MySql Databases2","Unlimited Bandwidth2","unlimited Sub & Parked Domains2","30 Days Unconditional Furentee2","Free Domain2","Disk space2",]},
+    {item : [ "Number of Website3","Number of Email Account3","Unlimited MySql Databases3","Unlimited Bandwidth3","unlimited Sub & Parked Domains3","30 Days Unconditional Furentee3","Free Domain3","Disk space3",]},
+    {item : [ "Number of Website4","Number of Email Account4","Unlimited MySql Databases4","Unlimited Bandwidth4","unlimited Sub & Parked Domains4","30 Days Unconditional Furentee4","Free Domain4","Disk space4",]},
+  ]
+
+  
+
+  console.log(data[0].item) 
+//   const itemOneArrayItration = data.item.map((item,index) => <li key={index}>{item}</li>)
 
   return (
     <section className="support">
@@ -18,7 +27,7 @@ const Support = () => {
         <div className="support-item">
           <Tabs>
             <Tab title="tab-1">
-              <ul>{itemOneArrayItration}</ul>
+              <ul>{"itemOneArrayItration"}</ul>
             </Tab>
             <Tab title="tab-2">
               <div>Lorem ipsum dolor sit2.</div>
