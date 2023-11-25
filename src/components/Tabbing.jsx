@@ -7,24 +7,30 @@ const Tabbing = ({ data }) => {
       {/* Title Itration */}
       <div className="support-item__title">
         {data.map((item, _) => (
-          <h3
-            key={_}
-            className={`cursor-pointer p-4 ${
-              activeTab === item.title ? "active" : ""
-            }`}
-            onClick={() => setActiveTab(item.title)}
-          >
-            {item.title}
-          </h3>
+          <>
+            <h3
+              key={_}
+              className={`cursor-pointer p-4 ${
+                activeTab === item.title ? "active" : ""
+              }`}
+              onClick={() => setActiveTab(item.title)}
+            >
+              {item.title}
+            </h3>
+            <div className="mobileContent lg:hidden block support-item__content">
+              <ul key={_} className={`${ activeTab === item.title ? "" : "hidden" }`}>
+                {item.item.map((tabItem,_) => <li key={_}>{tabItem}</li>)}
+              </ul>
+            </div>
+          </>
         ))}
       </div>
 
       {/* Content Itration */}
-      <div className={`support-item__content`} >
+      <div className={`support-item__content lg:inline-flex hidden`} >
         {data.map((tabs, _) => (
-            <ul key={_} className={`${ activeTab === tabs.title ? "" : "hidden" }`}>
+            <ul key={_} className={`${ activeTab === tabs.title ? "" : "hidden" } `}>
               {tabs.item.map((tabItem,_) => <li key={_}>{tabItem}</li>)}
-              
             </ul>
         ))}
       </div>

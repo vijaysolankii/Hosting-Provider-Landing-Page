@@ -10,7 +10,7 @@
   }
   section {
     @apply py-[100px];
-    @media (max-width: 991px) {
+    @media (max-width: 1024px) {
       @apply py-[60px];
     }
   }
@@ -190,26 +190,50 @@
   /* Support Component Classes Ends */
   .support {
     @apply bg-white;
-    &-item{
-      @apply mt-16;
-      &__title{
-        @apply gap-5 flex flex-col;
+    &-item {
+      @apply mt-16 flex gap-x-3;
+      &__title {
+        @apply lg:gap-5 gap-3 flex flex-col lg:w-[60%] w-[100%] overflow-hidden;
         h3 {
-          @apply border border-[#ddd] rounded-[60px] px-8 py-6 text-2xl font-semibold duration-300 transition-all relative;
-          &:after{
+          @apply border border-[#ddd] rounded-[60px] lg:p-9 py-[0.85rem] px-[1.25rem] pr-[50px] md:text-2xl text-[16px] font-semibold duration-300 transition-all relative;
+          &:after {
             content: "-";
-            @apply font-poppins pl-[2px] pt-[3px] text-black-light font-normal absolute top-[50%] right-[30px] -translate-y-[50%] w-[30px] h-[30px] rounded-[50%] border border-black flex items-center justify-center;
+            @apply font-poppins pl-[1px] md:pl-[2px] pt-[3px] text-black-light font-normal absolute top-[50%] md:right-[30px] right-[20px] -translate-y-[50%] md:w-[30px] w-[20px] md:h-[30px] h-[20px] rounded-[50%] border border-black flex items-center justify-center;
           }
-          &.active,&:hover{
+          &.active,
+          &:hover {
             @apply bg-cyan text-white;
-            &:after{
+            &:after {
               content: "+";
-              @apply text-[#ddd] border-[#ddd] pl-[1px] pt-[2px];
+              @apply text-[#ddd] border-[#ddd] md:pl-[1px] pl-[0px] pt-[2px];
+            }
+          }
+          @media  (max-width:1024px){
+            & + .mobileContent {
+              @apply hidden;
+            }
+            &.active + .mobileContent {
+              @apply block;
             }
           }
         }
       }
-      &__content{}
+      &__content {
+        @apply lg:w-[40%] w-full bg-black rounded-[30px] overflow-hidden lg:p-[30px] px-[15px] py-[20px];
+        ul {
+          @apply w-full;
+          li {
+            @apply py-[12px] md:px-[60px] md:pl-[60px] px-[20px] pl-[45px] bg-black-semi rounded-[40px] md:mb-5 mb-2 last:mb-0 text-white md:text-lg text-sm relative cursor-pointer transition-all duration-300;
+            &:hover {
+              @apply bg-black-light;
+            }
+            &:before {
+              content: "";
+              @apply absolute top-[50%] left-[25px] -translate-y-[50%] md:w-[20px] md:h-[20px] w-[10px] h-[10px] rounded-[50%] bg-white;
+            }
+          }
+        }
+      }
     }
   }
   /* Support Component Classes Ends */
