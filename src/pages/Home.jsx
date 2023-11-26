@@ -4,6 +4,7 @@ import HeroBanner from "../sections/HeroBanner";
 import HeroSlider from "../sections/HeroSlider";
 import Services from "../sections/Services";
 import Support from "../sections/Support";
+import Pricing from "../sections/Pricing";
 
 const Home = () => {
   return (
@@ -13,6 +14,7 @@ const Home = () => {
       <HeroSlider />
       <Services />
       <Support />
+      <Pricing />
     </>
   );
 };

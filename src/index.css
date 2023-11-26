@@ -158,7 +158,7 @@
       @apply flex lg:flex-row flex-col xl:gap-x-14 gap-8  xl:mt-[150px] md:mt-[80px] mt-[50px];
     }
     &-card {
-      &:hover {
+      &:hover,&:nth-child(2) {
         @apply bg-black border-black cursor-pointer xl:-translate-y-[80px] md:-translate-y-[0px];
         box-shadow: 0px 10px 30px 0 #0000007a;
         .services-card__content {
@@ -208,7 +208,7 @@
               @apply text-[#ddd] border-[#ddd] md:pl-[1px] pl-[0px] pt-[2px];
             }
           }
-          @media  (max-width:1024px){
+          @media (max-width: 991px) {
             & + .mobileContent {
               @apply hidden;
             }
@@ -237,4 +237,75 @@
     }
   }
   /* Support Component Classes Ends */
+
+  /* Pricing Component Classes Starts */
+  .pricing {
+    @apply bg-black;
+    &-heading {
+      @apply relative;
+      h2 {
+        @apply md:w-[75%] w-full md:p-0 px-4 mx-auto text-white text-center;
+      }
+      span {
+        @apply absolute md:top-[50%] top-[100px]; 
+        img {
+          @apply leading-[0] xl:w-full md:w-[40px] w-[30px];
+        }
+        &.right-arrow {
+          @apply right-0;
+        }
+        &.left-arrow {
+          @apply left-0;
+        }
+      }
+    }
+    .pricing-list {
+      @apply xl:mt-[200px] mt-[100px] flex gap-8 lg:flex-row flex-col; 
+      &-item {
+        @apply duration-300 transition-all cursor-pointer;
+        &:hover,&:nth-child(2) {
+          @apply bg-cyan text-white;
+          .pricing-list-item__content {
+            ul li svg path {
+              fill: #fff;
+            }
+            .btn {
+              @apply bg-white text-black;
+            }
+          }
+        }
+        @apply lg:w-[33%] w-full bg-white rounded-[30px] xl:px-8 xl:py-10 px-6 py-6; 
+        &__heading {
+          @apply border-b border-[#ddd] pb-[15px] mb-[30px];
+          h4 {
+            @apply md:text-3xl text-2xl capitalize font-semibold md:mb-6 mb-2;
+          }
+          .pricing {
+            @apply inline-block bg-transparent md:text-5xl text-4xl leading-[1.4] font-semibold ;
+            strong {
+              @apply md:text-2xl text-lg text-[#aaa] ml-2 -top-[4px] relative font-normal;
+            }
+          }
+          p{
+            @apply md:min-h-[73px] xl:min-h-full;
+            
+          }
+        }
+        &__content {
+          ul {
+            li {
+              @apply last:mb-0 mb-3 relative flex gap-2 items-center md:text-[inherit] text-[14px];
+              svg path {
+                @apply duration-300 transition-all;
+              }
+            }
+          }
+          .btn {
+            @apply w-full text-center inline-block mt-4 bg-cyan text-white;
+          }
+        }
+      }
+    }
+  }
+  /* Pricing Component Classes Ends */
 }
