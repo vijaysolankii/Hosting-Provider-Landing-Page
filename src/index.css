@@ -308,4 +308,13 @@
     }
   }
   /* Pricing Component Classes Ends */
+  
+  
+  /* Reviews Component Classes Ends */
+  .reviews{
+    @apply bg-white
+  }
+  /* Reviews Component Classes Ends */
+
+
 }

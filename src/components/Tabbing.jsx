@@ -7,9 +7,8 @@ const Tabbing = ({ data }) => {
       {/* Title Itration */}
       <div className="support-item__title">
         {data.map((item, _) => (
-          <>
+          <div key={_}>
             <h3
-              key={_}
               className={`cursor-pointer p-4 ${
                 activeTab === item.title ? "active" : ""
               }`}
@@ -22,7 +21,7 @@ const Tabbing = ({ data }) => {
                 {item.item.map((tabItem,_) => <li key={_}>{tabItem}</li>)}
               </ul>
             </div>
-          </>
+          </div>
         ))}
       </div>
 
