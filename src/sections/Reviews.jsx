@@ -12,6 +12,7 @@ const Reviews = () => {
       <div className="container">
         <Heading headContent={content} paragraphContent={longContent} />
         <ReviewSlider />
+        {/* Need Define new data for the review slider and pass as props */}
       </div>
     </section>
   );

@@ -312,7 +312,8 @@
   
   /* Reviews Component Classes Ends */
   .reviews{
-    @apply bg-white
+    @apply bg-white;
+    
   }
   /* Reviews Component Classes Ends */
 
