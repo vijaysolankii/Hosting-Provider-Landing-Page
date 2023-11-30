@@ -25,10 +25,10 @@ const ReviewSlider = ({ data }) => {
       {data.map((item, _) => (
         <SwiperSlide key={_}>
           <i><img src={Quote} alt="quote" /></i>
-          <h5>{data && data.name}</h5>
-          <span>{data && data.designation}</span>
-          <p>{data && data.review}</p>
-          <p>{data && data.stars}</p>
+          <h5>{item && item.name}</h5>
+          <span>{item && item.designation}</span>
+          <p>{item && item.review}</p>
+          <p>{item && item.stars}</p>
         </SwiperSlide>
       ))}
     </Swiper>
