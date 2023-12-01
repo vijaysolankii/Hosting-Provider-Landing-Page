@@ -314,7 +314,7 @@
   .reviews {
     @apply bg-white;
     .heading {
-      @apply flex;
+      @apply flex ;
       p {
         @apply mr-0;
       }
