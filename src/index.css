@@ -267,12 +267,15 @@
         &:hover,
         &:nth-child(2) {
           @apply bg-cyan text-white;
+          .pricing-list-item__heading strong {
+            @apply text-white;
+          }
           .pricing-list-item__content {
             ul li svg path {
               fill: #fff;
             }
             .btn {
-              @apply bg-white text-black;
+              @apply bg-white text-cyan;
             }
           }
         }
@@ -285,7 +288,7 @@
           .pricing {
             @apply inline-block bg-transparent md:text-5xl text-4xl leading-[1.4] font-semibold;
             strong {
-              @apply md:text-2xl text-lg text-[#aaa] ml-2 -top-[4px] relative font-normal;
+              @apply md:text-2xl text-lg text-[#aaa] ml-2 -top-[4px] relative font-normal duration-300 transition-all;
             }
           }
           p {
@@ -314,9 +317,48 @@
   .reviews {
     @apply bg-white;
     .heading {
-      @apply flex ;
+      @apply flex md:flex-row md:gap-0 gap-[20px] flex-col;
+      align-items: center;
+      h2 {
+        @apply md:w-[500px] w-full;
+      }
       p {
-        @apply mr-0;
+        @apply mr-0 text-[20px];
+      }
+    }
+    .swiper-scrollbar {
+      opacity: 1 !important;
+      height: 8px !important;
+      .swiper-scrollbar-drag{
+        @apply bg-cyan
+      }
+    }
+    &-slider {
+      @apply md:mt-[100px] mt-[40px] pb-[80px] ;
+      .swiper-slide {
+        &.swiper-slide-active {
+          @apply bg-black text-white;
+        }
+        @apply border border-[#ddd] rounded-[30px] md:px-[40px] px-[20px] md:py-[60px] py-[30px] duration-700 transition-all;
+        i {
+          @apply inline-block leading-[0] md:mb-6 mb-3;
+          img{
+            @apply md:w-full w-[30px] 
+          }
+        }
+        h5 {
+          @apply font-semibold;
+        }
+
+        p {
+          @apply md:mt-6 md:text-xl mt-3 text-sm;
+        }
+      }
+      &-star {
+        @apply flex md:gap-2 gap-2 md:mt-6 mt-4;
+        span img{
+          @apply md:w-[full] w-[20px]
+        }
       }
     }
   }

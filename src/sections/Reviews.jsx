@@ -3,7 +3,7 @@ import ReviewSlider from "../components/ReviewSlider";
 import Heading from "../components/Heading";
 
 const Reviews = () => {
-  const content = "what do out customer says?",
+  const content = "What do our customer says?",
     longContent =
       "You will be surprised how our customers comment on what we do so well. because we really prioritize the satisfection of our customers";
 
@@ -13,7 +13,7 @@ const Reviews = () => {
       designation: "CEO Tokped",
       review:
         "Web hosting that i highly recommand because the service provided is very good, hosting is fast so with a pretty fantastic speed",
-      stars: 5,
+      stars: 2,
     },
     {
       name: "Slamet Wijaya",
