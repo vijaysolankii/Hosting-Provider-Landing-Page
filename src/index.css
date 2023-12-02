@@ -188,7 +188,7 @@
   }
   /* Services Component Classes Ends */
 
-  /* Support Component Classes Ends */
+  /* Support Component Classes Starts */
   .support {
     @apply bg-white;
     &-item {
@@ -313,7 +313,7 @@
   }
   /* Pricing Component Classes Ends */
 
-  /* Reviews Component Classes Ends */
+  /* Reviews Component Classes Starts */
   .reviews {
     @apply bg-white;
     .heading {
@@ -363,4 +363,32 @@
     }
   }
   /* Reviews Component Classes Ends */
+
+  /* Contact Component Classes Starts */
+  .contact{
+    
+    .heading{
+      @apply text-center text-white md:mb-[100px] mb-[50px] ;
+    }
+    &-form{
+      
+      @apply bg-black-light md:px-[30px] px-[20px] md:py-[50px] py-[30px] rounded-[40px] flex lg:flex-row flex-col md:gap-5 gap-3;
+      &-input{
+        @apply lg:w-[33.33%] w-full;
+        input{
+          @apply outline-none md:text-lg text-sm px-[30px] md:py-[15px] py-[10px] rounded-[40px] bg-black-semi text-[#ddd] w-full duration-700 transition-all border border-black-semi;
+          &:focus,&:hover{
+            @apply border border-cyan;
+          }
+        }
+      }
+      &-submit{
+        @apply lg:w-[20%] w-full;
+        input{
+          @apply cursor-pointer bg-cyan ;
+        }
+      }
+    }
+  }
+  /* Contact Component Classes Ends */
 }
