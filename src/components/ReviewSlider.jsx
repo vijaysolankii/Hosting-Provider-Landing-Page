@@ -34,6 +34,7 @@ const ReviewSlider = ({ data }) => {
           slidesPerView:2
         },
       }}
+      loop={true}
     >
       {data.map((item, _) => (
         
