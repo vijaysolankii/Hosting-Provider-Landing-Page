@@ -329,12 +329,12 @@
     .swiper-scrollbar {
       opacity: 1 !important;
       height: 8px !important;
-      .swiper-scrollbar-drag {
-        @apply bg-cyan;
+      .swiper-scrollbar-drag{
+        @apply bg-cyan
       }
     }
     &-slider {
-      @apply md:mt-[100px] mt-[40px] pb-[80px];
+      @apply md:mt-[100px] mt-[40px] pb-[80px] ;
       .swiper-slide {
         &.swiper-slide-active {
           @apply bg-black text-white;
@@ -342,8 +342,8 @@
         @apply border border-[#ddd] rounded-[30px] md:px-[40px] px-[20px] md:py-[60px] py-[30px] duration-700 transition-all;
         i {
           @apply inline-block leading-[0] md:mb-6 mb-3;
-          img {
-            @apply md:w-full w-[30px];
+          img{
+            @apply md:w-full w-[30px] 
           }
         }
         h5 {
@@ -356,8 +356,8 @@
       }
       &-star {
         @apply flex md:gap-2 gap-2 md:mt-6 mt-4;
-        span img {
-          @apply md:w-[full] w-[20px];
+        span img{
+          @apply md:w-[full] w-[20px]
         }
       }
     }
@@ -365,26 +365,27 @@
   /* Reviews Component Classes Ends */
 
   /* Contact Component Classes Starts */
-  .contact {
-    .heading {
-      @apply text-center text-white md:mb-[100px] mb-[50px];
+  .contact{
+    
+    .heading{
+      @apply text-center text-white md:mb-[100px] mb-[50px] ;
     }
-    &-form {
+    &-form{
+      
       @apply bg-black-light md:px-[30px] px-[20px] md:py-[50px] py-[30px] rounded-[40px] flex lg:flex-row flex-col md:gap-5 gap-3;
-      &-input {
+      &-input{
         @apply lg:w-[33.33%] w-full;
-        input {
+        input{
           @apply outline-none md:text-lg text-sm px-[30px] md:py-[15px] py-[10px] rounded-[40px] bg-black-semi text-[#ddd] w-full duration-700 transition-all border border-black-semi;
-          &:focus,
-          &:hover {
+          &:focus,&:hover{
             @apply border border-cyan;
           }
         }
       }
-      &-submit {
+      &-submit{
         @apply lg:w-[20%] w-full;
-        input {
-          @apply cursor-pointer bg-cyan;
+        input{
+          @apply cursor-pointer bg-cyan ;
         }
       }
     }
@@ -392,44 +393,9 @@
   /* Contact Component Classes Ends */
 
   /* Footer Component Classes Starts */
-  .footer {
-    @apply pb-[40px];
-    &-nav {
-      border-top: 1px solid #666;
-      border-bottom: 1px solid #666;
-      @apply flex md:gap-5 lg:gap-y-0 gap-y-10 lg:justify-center justify-start flex-wrap md:py-[80px] py-[40px];
-      &-block {
-        @apply lg:w-[20%] md:w-[25%] w-[50%] text-white;
-        &:nth-child(2n) {
-          @apply pl-[10px];
-        }
-        ul {
-          li {
-            @apply md:mb-[14px] mb-[3px] last:mb-0 md:text-[16px] text-[12px];
-            &:first-child {
-              @apply md:text-xl text-[18px] md:mb-[20px] mb-[10px] capitalize;
-            }
-            a {
-              @apply transition-all duration-700;
-              &:hover {
-                @apply text-cyan;
-              }
-            }
-          }
-        }
-      }
-    }
-    &-secondary {
-      @apply flex justify-between items-center md:pt-[30px] pt-[15px];
-      a {
-        @apply inline-block;
-        img{
-          @apply md:w-full w-[100px] 
-        }
-      }
-      p {
-        @apply text-white;
-      }
+  .footer{
+    &-nav{
+      @apply bg-white border border-[#fff] border-t-[#fff] ;
     }
   }
   /* Footer Component Classes Ends */
