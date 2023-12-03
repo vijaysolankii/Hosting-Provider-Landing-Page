@@ -9,22 +9,15 @@ const Footer = () => {
           <div className="footer-nav-block">
             <ul>
               <li>Company</li>
-              <li>
-                <a href="#">About us</a>
-              </li>
-              <li>
-                <a href="#">Contact us</a>
-              </li>
-              <li>
-                <a href="#">Career</a>
-              </li>
-              <li>
-                <a href="#">blog</a>
-              </li>
+              <li> <a href="#">About us</a> </li> 
+              <li> <a href="#">Contact us</a> </li> 
+              <li> <a href="#">Career</a> </li> 
+              <li> <a href="#">blog</a> </li>
             </ul>
           </div>
           <div className="footer-nav-block">
             <ul>
+              
               <li>Features</li>
               <li>
                 <a href="#">Domain</a>
