@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
 const EmailForm = () => {
@@ -8,6 +8,8 @@ const EmailForm = () => {
     text: '',
   });
 
+  const emailInfo = []
+
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setEmailData((prevData) => ({ ...prevData, [name]: value }));
@@ -16,24 +18,31 @@ const EmailForm = () => {
   const handleSendEmail = async () => {
     try {
       await axios.post('http://localhost:3001/send-email', emailData);
+      emailInfo.push(emailData)
       console.log('Email sent successfully!');
+      console.log([...emailInfo])
     } catch (error) {
       console.error('Error sending email:', error.message);
     }
   };
+  
+
+
+  
 
   return (
     <div>
-      <label>To:</label>
+      <label className='text-white'>To:</label>
       <input type="email" name="to" value={emailData.to} onChange={handleInputChange} />
 
-      <label>Subject:</label>
+      <label className='text-white'>Subject:</label>
       <input type="text" name="subject" value={emailData.subject} onChange={handleInputChange} />
 
-      <label>Message:</label>
+      <label className='text-white'>Message:</label>
       <textarea name="text" value={emailData.text} onChange={handleInputChange} />
 
-      <button onClick={handleSendEmail}>Send Email</button>
+      <button className='text-white' onClick={handleSendEmail}>Send Email</button>
+
     </div>
   );
 };

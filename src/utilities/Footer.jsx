@@ -1,5 +1,6 @@
 import React from "react";
 import Logo from "../assets/images/Logo.svg";
+import EmailForm from "../components/EmailForm";
 
 const Footer = () => {
   return (
