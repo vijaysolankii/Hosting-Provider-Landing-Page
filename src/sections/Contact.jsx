@@ -24,8 +24,11 @@ const Contact = () => {
       emailInfo.push(emailData);
       setRegData(prevElem => [...prevElem,{emailData}])
       console.log("Email sent successfully!");
+      document.querySelector('.message').text = 'Email sent successfully!'  
+
     } catch (error) {
       console.error("Error sending email:", error.message);
+      document.querySelector('.message').text = 'failed to sent Email !'
     }
   };
 
@@ -51,6 +54,7 @@ const Contact = () => {
             <input type="submit" onClick={handleSendEmail} value="Sign Up" className="btn btn-primary" />
           </div>
         </div>
+        <div className="message"></div>
       </div>
     </section>
   );
