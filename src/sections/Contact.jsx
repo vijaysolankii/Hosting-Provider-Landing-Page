@@ -36,6 +36,8 @@ const Contact = () => {
   const title =
     "Sign up now for as much hosting and domain as you want for $20.99/year";
 
+    recoverStatus = ''
+
   return (
     <section className="contact">
       <div className="container">
