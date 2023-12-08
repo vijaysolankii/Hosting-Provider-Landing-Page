@@ -19,8 +19,10 @@ const Login = () => {
     // Check if the provided username and password match the default values
     if (formData.username === 'defaultUser' && formData.password === 'defaultPass') {
       console.log('Login successful!');
+      localStorage.setItem('isLoggedIn', 'true');
       // Redirect to internal page upon successful login
       history('/internal-page');
+
     } else {
       console.log('Invalid username or password');
       // You can handle unsuccessful login here (show an error message, etc.)
