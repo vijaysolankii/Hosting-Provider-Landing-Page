@@ -11,6 +11,7 @@ const Contact = () => {
 
   const [regData,setRegData] = useState([])
 
+  // Removed the data and deleted data file
   const emailInfo = [];
 
   const handleInputChange = (e) => {
