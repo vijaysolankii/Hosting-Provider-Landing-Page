@@ -3,6 +3,7 @@ import LocomotiveScroll from "locomotive-scroll";
 
 function App() {
   const scrollContainerRef = useRef(null);
+  use
 
   useEffect(() => {
     const scroll = new LocomotiveScroll({
