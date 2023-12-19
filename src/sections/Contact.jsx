@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Heading from "../components/Heading";
+import useIntersectionObserver from '../components/utilities/useIntersectionObserver';
 
 const Contact = () => {
   const [emailData, setEmailData] = useState({
@@ -10,6 +11,8 @@ const Contact = () => {
   });
 
   const [regData,setRegData] = useState([])
+
+  const [ref, visible] = useIntersectionObserver()
 
   // Removed the data and deleted data file
   const emailInfo = [];
@@ -41,7 +44,8 @@ const Contact = () => {
     recoverStatus = ''
 
   return (
-    <section className="contact">
+    <section className={`contact ${isVisible ? 'visible' : ''}`} ref={ref}>
+      
       <div className="container">
         <Heading headContent={title} />
         <div className="contact-form">
