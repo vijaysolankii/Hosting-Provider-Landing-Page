@@ -12,7 +12,7 @@ const Contact = () => {
 
   const [regData,setRegData] = useState([])
 
-  const [ref, visible] = useIntersectionObserver()
+  const [ref, isVisible] = useIntersectionObserver()
 
   // Removed the data and deleted data file
   const emailInfo = [];
