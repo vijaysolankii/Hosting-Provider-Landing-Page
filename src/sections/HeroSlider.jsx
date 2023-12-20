@@ -1,11 +1,11 @@
-import React,{ useEffect,useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import Swiper from "swiper/bundle";
 import "../../node_modules/swiper/swiper-bundle.css";
 import Logo from "../assets/images/Logo.svg";
-
+import useIntersectionObserver from "../components/useIntersectionObserver";
 const HeroSlider = () => {
   const swiperRef = useRef(null);
-
+  const [ref, isVisible] = useIntersectionObserver();
   useEffect(() => {
     const mySwiper = new Swiper(swiperRef.current, {
       slidesPerView: "auto",
@@ -43,7 +43,7 @@ const HeroSlider = () => {
   }, []);
 
   return (
-    <section className="heroSlider">
+    <section className={`heroSlider ${isVisible ? "visible" : ""}`} ref={ref}>
       <div className="overflow-hidden">
         <div ref={swiperRef} className="swiper-container">
           <div className="swiper-wrapper oWrap">
