@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Heading from "../components/Heading";
-import useIntersectionObserver from '../components/utilities/useIntersectionObserver';
+import useIntersectionObserver from '../components/useIntersectionObserver';
 
 const Contact = () => {
   const [emailData, setEmailData] = useState({
@@ -10,12 +10,12 @@ const Contact = () => {
     text: "",
   });
 
-  const [regData,setRegData] = useState([])
-
+  const [loading, setLoading] = useState(false);
+  const [formData, setFormData] = useState([]);
   const [ref, isVisible] = useIntersectionObserver()
 
   // Removed the data and deleted data file
-  const emailInfo = [];
+  // const emailInfo = [];
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -25,23 +25,33 @@ const Contact = () => {
   const handleSendEmail = async () => {
     try {
       // Replace URL 
+      setLoading(true)
       await axios.post("http://localhost:3001/send-email", emailData);
-      emailInfo.push(emailData);
-      setRegData(prevElem => [...prevElem,{emailData}])
       console.log("Email sent successfully!");
-      document.querySelector('.message').text = 'Email sent successfully!'  
+      document.querySelector('.message').innerHTML = 'Email sent successfully!'  
 
     } catch (error) {
       console.error("Error sending email:", error.message);
-      document.querySelector('.message').text = 'failed to sent Email !'
+      document.querySelector('.message').innerHTML = 'failed to sent Email !'
+    } finally {
+      setLoading(false)
+      setEmailData({to:"",subject:"",text:""})
     }
   };
 
-  console.log(regData)
+  // console.log(regData)
   const title =
     "Sign up now for as much hosting and domain as you want for $20.99/year";
 
-    recoverStatus = ''
+  
+  useEffect(() => {
+    axios.get("http://localhost:3001/get-submitted-data")
+    .then(response => setFormData(response.data))
+    .catch(error => console.error("Error fetching submitted data:", error));
+  }, [])
+
+
+  console.log(formData)
 
   return (
     <section className={`contact ${isVisible ? 'visible' : ''}`} ref={ref}>
@@ -50,10 +60,10 @@ const Contact = () => {
         <Heading headContent={title} />
         <div className="contact-form">
           <div className="contact-form-input">
-            <input type="text" id="name" name="to" value={emailData.to} onChange={handleInputChange} placeholder="Name" />
+            <input type="text" id="name" name="subject" value={emailData.subject} onChange={handleInputChange} placeholder="Name" />
           </div>
           <div className="contact-form-input">
-            <input type="email" id="email" name="subject" value={emailData.subject} onChange={handleInputChange} placeholder="E-mail Address" />
+            <input type="email" id="email" name="to" value={emailData.to} onChange={handleInputChange} placeholder="E-mail Address" />
           </div>
           <div className="contact-form-input">
             <input type="text" id="message" name="text" value={emailData.text} onChange={handleInputChange} placeholder="Your Message" />

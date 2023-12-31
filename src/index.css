@@ -337,7 +337,8 @@ body {
               @apply hidden;
             }
             &.active + .mobileContent {
-              @apply block;
+              @apply block mt-[10px];
+              
             }
           }
         }
@@ -489,6 +490,7 @@ body {
 
   /* Contact Component Classes Starts */
   .contact {
+    @apply relative;
     .heading {
       @apply text-center text-white md:mb-[100px] mb-[50px];
     }
@@ -510,6 +512,9 @@ body {
           @apply cursor-pointer bg-cyan;
         }
       }
+    }
+    .message {
+      @apply text-white md:text-2xl text-[20px] absolute md:bottom-[30px] bottom-[14px] right-0 left-0 text-center;
     }
   }
   /* Contact Component Classes Ends */
