@@ -1,23 +1,60 @@
 // InternalPage.js
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const InternalPage = () => {
   const navigate = useNavigate();
+  const [formData, setFormData] = useState([]);
 
   const handleLogout = () => {
     // Remove the login flag from local storage
-    localStorage.removeItem('isLoggedIn');
+    localStorage.removeItem("isLoggedIn");
     // Redirect to the login page upon logout
-    navigate('/');
+    navigate("/");
   };
 
+  useEffect(() => {
+    axios
+      .get("https://hosting-lp-backend.vercel.app/get-submitted-data")
+      .then((response) => setFormData(response.data))
+      .catch((error) => console.error("Error fetching submitted data:", error));
+  }, []);
+
+  console.log(formData);
+
   return (
-    <div className='h-[100vh] w-[100vh] flex items-center justify-center md:text-5xl text-2xl text-cyan bg-black-lite text-white'>
-      <h2>Internal Page</h2>
-      <p>Welcome to the internal page!</p>
-      <button onClick={handleLogout}>Logout</button>
-    </div>
+    <section className="users">
+      <div className="container overflow-x-auto">
+        <div className="topHeading">
+          <h2>Internal Page</h2>
+          <p>Welcome to the internal page!</p>
+          <button className='btn' onClick={handleLogout}>Logout</button>
+        </div>
+        <table className="min-w-full bg-white border border-gray-300 mt-5">
+          <thead>
+            <tr>
+              <th className="text-left py-2 px-4 border-b">Check</th>
+              <th className="text-left py-2 px-4 border-b">Name</th>
+              <th className="text-left py-2 px-4 border-b">Email</th>
+              <th className="text-left py-2 px-4 border-b">Subject</th>
+            </tr>
+          </thead>
+          <tbody>
+            {formData.map((item, index) => (
+              <tr key={index}>
+                <td className="text-left py-2 px-4 border-b">
+                  <input type="checkbox" name="cb_user" id={index} />
+                </td>
+                <td className="text-left py-2 px-4 border-b">{item.subject}</td>
+                <td className="text-left py-2 px-4 border-b">{item.to}</td>
+                <td className="text-left py-2 px-4 border-b">{item.text}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
   );
 };
 

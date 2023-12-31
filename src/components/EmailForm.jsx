@@ -17,7 +17,7 @@ const EmailForm = () => {
 
   const handleSendEmail = async () => {
     try {
-      await axios.post('http://localhost:3001/send-email', emailData);
+      await axios.post('https://hosting-lp-backend.vercel.app/send-email', emailData);
       emailInfo.push(emailData)
       console.log('Email sent successfully!');
       console.log([...emailInfo])

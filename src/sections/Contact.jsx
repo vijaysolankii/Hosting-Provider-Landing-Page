@@ -11,7 +11,7 @@ const Contact = () => {
   });
 
   const [loading, setLoading] = useState(false);
-  const [formData, setFormData] = useState([]);
+
   const [ref, isVisible] = useIntersectionObserver()
 
   // Removed the data and deleted data file
@@ -26,7 +26,7 @@ const Contact = () => {
     try {
       // Replace URL 
       setLoading(true)
-      await axios.post("http://localhost:3001/send-email", emailData);
+      await axios.post("https://hosting-lp-backend.vercel.app/send-email", emailData);
       console.log("Email sent successfully!");
       document.querySelector('.message').innerHTML = 'Email sent successfully!'  
 
@@ -44,14 +44,7 @@ const Contact = () => {
     "Sign up now for as much hosting and domain as you want for $20.99/year";
 
   
-  useEffect(() => {
-    axios.get("http://localhost:3001/get-submitted-data")
-    .then(response => setFormData(response.data))
-    .catch(error => console.error("Error fetching submitted data:", error));
-  }, [])
-
-
-  console.log(formData)
+ 
 
   return (
     <section className={`contact ${isVisible ? 'visible' : ''}`} ref={ref}>

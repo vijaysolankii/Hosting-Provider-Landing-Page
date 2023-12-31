@@ -6,8 +6,8 @@
 
 /* Locomotive Scroll */
 
- /* Loader */
- .spinner {
+/* Loader */
+.spinner {
   animation: spin 1.5s ease-in-out infinite;
 }
 
@@ -338,7 +338,6 @@ body {
             }
             &.active + .mobileContent {
               @apply block mt-[10px];
-              
             }
           }
         }
@@ -519,6 +518,53 @@ body {
   }
   /* Contact Component Classes Ends */
 
+  /* Login Page CSS starts */
+  .login-form {
+    @apply mx-auto md:w-[600px] w-full md:px-[50px] px-[25px];
+    form {
+      @apply w-full;
+      .contact-form-input {
+        @apply w-full mb-[30px];
+        &:last-child {
+          @apply mb-0;
+        }
+        label {
+          @apply block mb-[5px] text-[20px] font-medium text-white;
+        }
+        input {
+          @apply rounded-[10px];
+        }
+        .btn {
+          @apply w-full rounded-[10px] text-white;
+          &:hover {
+            @apply bg-cyan border-cyan;
+          }
+        }
+      }
+    }
+  }
+  /* Login Page CSS ends */
+
+  /* Internal Page CSS Starts */
+  .users {
+    @apply text-center;
+    .topHeading {
+      h2 {
+        @apply text-5xl font-bold mb-4 font-semibold text-white;
+      }
+      p {
+        @apply text-2xl font-bold mb-2 font-semibold text-white;
+      }
+      .btn {
+        @apply bg-cyan border-cyan;
+        &:hover {
+          @apply bg-white border-white;
+        }
+      }
+    }
+  }
+  /* Internal Page CSS Ends */
+
   /* Footer Component Classes Starts */
   .footer {
     @apply pb-[40px];
@@ -551,8 +597,8 @@ body {
       @apply flex justify-between items-center md:pt-[30px] pt-[15px];
       a {
         @apply inline-block;
-        img{
-          @apply md:w-full w-[100px] 
+        img {
+          @apply md:w-full w-[100px];
         }
       }
       p {

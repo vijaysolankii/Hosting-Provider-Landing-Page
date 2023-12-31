@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Logo from "../assets/images/Logo.svg";
 import Button from "../components/Button";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [isActive, setIsActive] = useState(false);
@@ -28,7 +29,7 @@ const Header = () => {
           </ul>
         </nav>
         <div className="md:w-2/12 w-3/12 text-right">
-          <Button classes={'btn-primary sm-space'} text="login" />
+          <Link to={'/login'}> <Button classes={'btn-primary sm-space'} text="login" /></Link>
         </div>
         <div className="block md:hidden">
           <div
